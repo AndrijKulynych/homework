@@ -5,9 +5,12 @@ import java.util.stream.IntStream;
 
 public class HeapSort {
 
-    public static void main(String[] args) {
+    private static int tmp;
 
+    public static void main(String[] args) {
+        int tmp ;
         int[] numbers = IntStream.generate(() -> (int) (Math.random()*(25331111+100000))-200000).limit(1000000).toArray();
+        //int[] numbers = {10,1,23,2,6,7,3,14};
         int n = numbers.length;
 
         System.out.println("Длина массива: " + numbers.length);
@@ -29,9 +32,10 @@ public class HeapSort {
 
     // sort num[1] to num[n]
     public static void heapsort(int[] a) {
-        for (int i = a.length / 2 - 1; i >= 0; i--)
+        for (int i = a.length / 2 - 1; i >= 0; i--) {
             // convert the array to a heap
             shiftDown(a, i, a.length);
+        }
         for (int i = a.length - 1; i > 0; i--) {
             swap(a, 0, i); /* deleteMax */
             shiftDown(a, 0, i);
@@ -40,7 +44,7 @@ public class HeapSort {
 
     private static void shiftDown(int[] a, int i, int n) {
         int child;
-        int tmp;
+
 
         for (tmp = a[i]; leftChild(i) < n; i = child) {
             child = leftChild(i);
@@ -60,9 +64,9 @@ public class HeapSort {
 
     // swap numbers
     public static void swap(int[] numbers, int i, int j) {
-        int temp = numbers[i];
+        tmp = numbers[i];
         numbers[i] = numbers[j];
-        numbers[j] = temp;
+        numbers[j] = tmp;
     }
 
 }
