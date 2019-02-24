@@ -18,7 +18,7 @@ public class HeapSort {
         System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);
         long startTime = System.currentTimeMillis();
         heapsort(numbers);
-        long spendTime = System.currentTimeMillis()-startTime;// время потрачено
+        long spendTime = System.currentTimeMillis()-startTime;
 
         for (int h = 0; h < numbers.length; h++)
             System.out.println(numbers[h]+ " ");

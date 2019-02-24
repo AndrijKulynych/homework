@@ -14,7 +14,7 @@ public class BubbleSort {
             System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);
             long startTime = System.currentTimeMillis();
            bubble_Sort(numbers);
-            long spendTime = System.currentTimeMillis()-startTime;// время потрачено
+            long spendTime = System.currentTimeMillis()-startTime;
             for (int h = 0; h < n; h++)
                 System.out.println(numbers[h]+ " ");
             System.out.println("Array length: " + numbers.length);
