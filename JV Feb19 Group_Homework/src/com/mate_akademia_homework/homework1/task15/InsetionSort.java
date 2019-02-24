@@ -10,19 +10,20 @@ public class InsetionSort {
         int[] numbers = IntStream.generate(() -> (int) (Math.random()*(25331111+100000))-200000).limit(1000000).toArray();
         int n = numbers.length;
 
-        System.out.println("Длина массива: " + numbers.length);
-        System.out.println("1-й ел-т массива до сортир-ки " + numbers[0]);
-        System.out.println("1000000-й ел-т массива до сорт-ки " + numbers[numbers.length-1]);
-        long startTime = System.currentTimeMillis();//время старт
+        System.out.println("Array length: " + numbers.length);
+        System.out.println("1-st element of array  before sort : "  + numbers[0]);
+        System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);
+        long startTime = System.currentTimeMillis();
         insertionSort(numbers);
-        long spendTime = System.currentTimeMillis()-startTime;// время потрачено
-        for (int h = 0; h < n; h++)
-            System.out.println(numbers[h]+ " ");
-        System.out.println("Длина массива: " + numbers.length);
-        System.out.println("1-й ел-т массива после сорт-ки " + numbers[0]);
-        System.out.println("1000000-й ел-т массива после сорт-ки " + numbers[numbers.length-1]);
+        long spendTime = System.currentTimeMillis()-startTime;
+        for (int h = 0; h < n; h++) {
+            System.out.println(numbers[h] + " ");
+        }
+        System.out.println("Array length: " + numbers.length);
+        System.out.println("1-st element of array  after sort : " + numbers[0]);
+        System.out.println("Last element of array  after sort : " + numbers[numbers.length-1]);
         System.out.println(" ");
-        System.out.println("Время сортировки:  " + spendTime);
+        System.out.println(" Spend time for sorting: " + spendTime);
 
 
     }

@@ -3,10 +3,13 @@ package com.mate_akademia_homework.homework1.task12;
 
 public class Solution2 {
 
+
     public static void main (String[] args) {
 
-        int x = 11;
-        int y = 11;
+       rombDraw(11,11);
+    }
+
+        public static void rombDraw(int x, int y){
 
         for (int i = 0; i < x; i++) {
 
@@ -21,7 +24,6 @@ public class Solution2 {
             System.out.println();
         }
         System.out.println();
-
     }
 
 }

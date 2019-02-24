@@ -13,21 +13,21 @@ public class HeapSort {
         //int[] numbers = {10,1,23,2,6,7,3,14};
         int n = numbers.length;
 
-        System.out.println("Длина массива: " + numbers.length);
-        System.out.println("1-й ел-т массива до сортир-ки " + numbers[0]);
-        System.out.println("1000000-й ел-т массива до сорт-ки " + numbers[numbers.length-1]);
-        long startTime = System.currentTimeMillis();//время старт
+        System.out.println("Array length: " + numbers.length);
+        System.out.println("1-st element of array  before sort : "  + numbers[0]);
+        System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);
+        long startTime = System.currentTimeMillis();
         heapsort(numbers);
         long spendTime = System.currentTimeMillis()-startTime;// время потрачено
 
         for (int h = 0; h < numbers.length; h++)
             System.out.println(numbers[h]+ " ");
 
-        System.out.println("Длина массива: " + numbers.length);
-        System.out.println("1-й ел-т массива после сорт-ки " + numbers[0]);
-        System.out.println("1000000-й ел-т массива после сорт-ки " + numbers[numbers.length-1]);
+        System.out.println("Array length: " + numbers.length);
+        System.out.println("1-st element of array  after sort : " + numbers[0]);
+        System.out.println("Last element of array  after sort : " + numbers[numbers.length-1]);
         System.out.println(" ");
-        System.out.println("Время сортировки:  " + spendTime);
+        System.out.println(" Spend time for sorting: " + spendTime);
     }
 
     // sort num[1] to num[n]
