@@ -6,10 +6,8 @@ import java.util.stream.IntStream;
 public class InsetionSort {
 
     public static void main (String[] args) {
-
         int[] numbers = IntStream.generate(() -> (int) (Math.random()*(25331111+100000))-200000).limit(1000000).toArray();
         int n = numbers.length;
-
         System.out.println("Array length: " + numbers.length);
         System.out.println("1-st element of array  before sort : "  + numbers[0]);
         System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);
@@ -24,9 +22,8 @@ public class InsetionSort {
         System.out.println("Last element of array  after sort : " + numbers[numbers.length-1]);
         System.out.println(" ");
         System.out.println(" Spend time for sorting: " + spendTime);
-
-
     }
+
         public static void insertionSort(int[] elements) {
             for (int i = 1; i < elements.length; i++) {
                 int key = elements[i];
@@ -34,10 +31,9 @@ public class InsetionSort {
                 while (j >= 0 && key < elements[j]) {
                     elements[j + 1] = elements[j];
                     j--;
-                }// end while loop
+                }
                 elements[j + 1] = key;
-            }// end for loop
+            }
         }
-
     }
 
