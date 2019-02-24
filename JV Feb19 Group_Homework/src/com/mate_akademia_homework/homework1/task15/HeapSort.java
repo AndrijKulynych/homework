@@ -4,13 +4,9 @@ package com.mate_akademia_homework.homework1.task15;
 import java.util.stream.IntStream;
 
 public class HeapSort {
-
     private static int tmp;
-
     public static void main(String[] args) {
-        int tmp ;
         int[] numbers = IntStream.generate(() -> (int) (Math.random()*(25331111+100000))-200000).limit(1000000).toArray();
-        int n = numbers.length;
         System.out.println("Array length: " + numbers.length);
         System.out.println("1-st element of array  before sort : "  + numbers[0]);
         System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);

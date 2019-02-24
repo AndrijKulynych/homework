@@ -4,14 +4,11 @@ import java.util.stream.IntStream;
 
 public class MergeSort {
     public static void main(String[] args) {
-
        int[] numbers = IntStream.generate(() -> (int) (Math.random()*(25331111+100000))-200000).limit(1000000).toArray();
         int n = numbers.length;
-
         System.out.println("Array length: " + numbers.length);
         System.out.println("1-st element of array  before sort : "  + numbers[0]);
         System.out.println("Last element of array  before sort : " + numbers[numbers.length-1]);
-
         long startTime = System.currentTimeMillis();
         mergeSort(numbers, 0, n - 1);
         long spendTime = System.currentTimeMillis()-startTime;
@@ -33,7 +30,6 @@ public class MergeSort {
             merge(elements, low, mid, high);
         }
     }
-
     private static void merge(int[] subset, int low, int mid, int high) {
         int n = high-low+1;
         int[] Temp = new int[n];

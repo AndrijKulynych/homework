@@ -7,7 +7,6 @@ import java.util.stream.IntStream;
 public class SelectionSort {
 
         public static void main(String[] args) {
-            //int[] numbers = {12,2,13,44,55,1,0};
             int[] numbers = IntStream.generate(() -> (int) (Math.random()*(2533111+1))-2000).limit(1000000).toArray();
             System.out.println("Array length: " + numbers.length);
             System.out.println("1-st element of array  before sort : "  + numbers[0]);
