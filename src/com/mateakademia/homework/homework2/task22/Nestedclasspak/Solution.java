@@ -2,7 +2,7 @@ package com.mateakademia.homework.homework2.task22.Nestedclasspak;
 
 public class Solution {
 
-        static class Innerclass {
+       static class Innerclass {
             public void show() {
                 System.out.println("I'm all understood!");
             }

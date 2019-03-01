@@ -10,7 +10,7 @@ public class ImmutableExample {
         String model1 = car1.getModel();
         double runV = car1.getRunVolume();
         int runPower1 = car1.getRunPower();
-        Date date1 = car1.getDate_produce();
+        Date date1 = car1.dateProduce;
         m1 = "BMW";
         model1 = "X6";
         runV = 4.4;
