@@ -1,7 +1,7 @@
 package com.mateakademia.homework.homework3.task32.lamborghinicar;
 
 public class Car {
-    private final int produceDate= 1999;
+    private final int produceDate;
     private String engineType;
     private int maxSpeed;
     private int accelerTime;
@@ -15,14 +15,17 @@ public class Car {
     private static final int MAX_WHEELS = 10;
 
     public Car (int produceDate) {
+        this.produceDate = produceDate;
         this.engineType = engineType;
         this.maxSpeed = maxSpeed;
         this.accelerTime = accelerTime;
         this.totalPassNumber = totalPassNumber;
     }
 
-    public Car (){
-         this.engineType = engineType;
+    public Car (int produceDate, String engineType, int maxSpeed, int accelerTime, int totalPassNumber,
+                int currentNumberOfPassengers, int currentSpeed){
+        this.produceDate = produceDate;
+        this.engineType = engineType;
         this.maxSpeed = maxSpeed;
         this.accelerTime = accelerTime;
         this.totalPassNumber = totalPassNumber;
