@@ -1,5 +1,7 @@
 package com.mateakademia.homework.homework3.task32.lamborghinicar;
 
+import java.time.LocalDate;
+
 public class Car {
     private final int produceDate;
     private String engineType;
@@ -14,17 +16,17 @@ public class Car {
     private static final int MAX_DOORS = 4;
     private static final int MAX_WHEELS = 10;
 
-    public Car (int produceDate) {
-        this.produceDate = produceDate;
+    public Car () {
+        produceDate = LocalDate.now().getYear();
         this.engineType = engineType;
         this.maxSpeed = maxSpeed;
         this.accelerTime = accelerTime;
         this.totalPassNumber = totalPassNumber;
     }
 
-    public Car (int produceDate, String engineType, int maxSpeed, int accelerTime, int totalPassNumber,
+    public Car ( String engineType, int maxSpeed, int accelerTime, int totalPassNumber,
                 int currentNumberOfPassengers, int currentSpeed){
-        this.produceDate = produceDate;
+        produceDate = LocalDate.now().getYear();
         this.engineType = engineType;
         this.maxSpeed = maxSpeed;
         this.accelerTime = accelerTime;
@@ -138,14 +140,17 @@ public class Car {
     }
 
     public double getMinTireWheel(){
-        double result = carwheels[0].getTireState();
-        for (int i = 0; i < wheelCount; i++){
-            result = (carwheels[i].getTireState() < result)?carwheels[i].getTireState():result;
+        double min = carwheels[0].getTireState();
+        for(int i = 0; i < carwheels.length-1; i ++) {
+
+            if (min > carwheels[i].getTireState()) ;
+            min = carwheels[i].getTireState();
         }
-        return result;
+        return min;
     }
 
     public int getCurrentNumberOfWheels(){
+
         return wheelCount;
     }
 
