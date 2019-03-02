@@ -165,8 +165,8 @@ public class Car {
         System.out.println("Max speed new car: " + maxSpeed);
         System.out.println("Time acceleration to 100 mps: " + accelerTime);
         System.out.println("Capacity of passengers: " + totalPassNumber);
-        System.out.println("Current speåd " + currentSpeed);
-        System.out.println("Current number of wheels: " + wheelCount);
+        System.out.println("Current speåd: " + currentSpeed);
+        System.out.println("Current number of wheels: " + wheelCount+"__");
     }
 }
 
