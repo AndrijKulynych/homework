@@ -3,7 +3,7 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
 import java.time.LocalDate;
 
 public class Car {
-    private final int produceDate;
+    private final LocalDate produceDate;
     private String engineType;
     private int maxSpeed;
     private int accelerTime;
@@ -17,7 +17,7 @@ public class Car {
     private static final int MAX_WHEELS = 10;
 
     public Car () {
-        produceDate = LocalDate.now().getYear();
+        produceDate = LocalDate.now();
         this.engineType = engineType;
         this.maxSpeed = maxSpeed;
         this.accelerTime = accelerTime;
@@ -26,7 +26,7 @@ public class Car {
 
     public Car ( String engineType, int maxSpeed, int accelerTime, int totalPassNumber,
                 int currentNumberOfPassengers, int currentSpeed){
-        produceDate = LocalDate.now().getYear();
+        produceDate = LocalDate.now();
         this.engineType = engineType;
         this.maxSpeed = maxSpeed;
         this.accelerTime = accelerTime;
@@ -120,23 +120,20 @@ public class Car {
         wheelCount = 0;
     }
 
-    public void setNewWheels(int x){
-        if (x + wheelCount > MAX_WHEELS) {
-            System.out.println("It's cannot add " + x + " wheels( maxWheels ) " + MAX_WHEELS );
+    public void setNewWheels(int numberOfWheels){
+        if (numberOfWheels + wheelCount > MAX_WHEELS) {
+            System.out.println("It's cannot add " + numberOfWheels + " wheels( maxWheels ) " + MAX_WHEELS );
         } else {
-            for (int i = 0; i < x; i++){
+            for (int i = 0; i < numberOfWheels; i++){
                 carwheels[wheelCount + i] = new CarWheel();
             }
-            wheelCount += x;
+            wheelCount += numberOfWheels;
         }
     }
 
     public double getCurrentMaxSpeed(double minTWheel){
-        if ((currentPassNumber == 0) || (wheelCount == 0)){
-            return 0;
-        } else {
-            return maxSpeed * minTWheel;
-        }
+         double rez = ((currentPassNumber == 0)||(wheelCount == 0))? 0 :(maxSpeed * minTWheel);
+       return rez;
     }
 
     public double getMinTireWheel(){

@@ -2,9 +2,9 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
 
     public class CarWheel {
 
-        private double tireTag;
         private static final double TIRE_OLD = 0.0;
         private static final double TIRE_NEW = 1.0;
+        private double tireTag;
 
         public CarWheel(){
             tireTag = 1.0;
@@ -19,15 +19,10 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
         }
 
         // method  check  value inside of [0,1]
-        private boolean checkTire(double tireTag) {
-            boolean chkRes = ((tireTag >= TIRE_OLD) && (tireTag <= TIRE_NEW));
-
-            if (!chkRes) {
-                System.out.println(" Wrong number tire wear, diapason is [0,1].");
-            } else {
-                System.out.println("It's right number tire wear, diapason is [0,1].");
-            }
-            return chkRes;
+        private boolean checkTire (double tireTag) {
+            boolean result = ((tireTag >= TIRE_OLD) && (tireTag <= TIRE_NEW));
+            if (!result) System.out.println(" Wrong number tire wear, diapason is [0,1].");
+            return result;
         }
 
           public void setTire(){

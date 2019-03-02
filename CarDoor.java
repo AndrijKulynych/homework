@@ -5,15 +5,13 @@ public class CarDoor {
     private boolean IsDoorOpened;
     private boolean IsWindowOpened;
 
-    CarDoor(){
-      IsDoorOpened = false;
-      IsWindowOpened = false;
-    }
-
     public CarDoor (boolean isDoorOpened, boolean isWindowOpened) {
         IsDoorOpened = isDoorOpened;
         IsWindowOpened = isWindowOpened;
     }
+
+    public CarDoor () {
+           }
 
     public void openDoor(){
         IsDoorOpened = true;
@@ -46,14 +44,6 @@ public class CarDoor {
     public boolean getWindow () {
         return IsWindowOpened;
     }
-
-
-        public void showInfo(){
-            System.out.println("The car door  is " + ((getDoor()?"opened":"closed")));
-            System.out.println("The car window  is " + ((getWindow()?"opened":"closed")));
-        }
-
-
 }
 
 
