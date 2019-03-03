@@ -80,7 +80,7 @@ public class Car {
         if (checkPassengers()) {
             currentPassNumber = 0;
         } else {
-            System.out.println("Passenges are absend");
+            System.out.println("Passenges are absent");
         }
     }
 
@@ -110,7 +110,7 @@ public class Car {
         if ((i >= 0) && (i <= wheelCount-1)){
             return carwheels[i];
         } else {
-            System.out.println("It is't  wheel with index " + i);
+            System.out.println("The wheel with index " + i+ "is apsent");
             return null;
         }
     }
