@@ -2,47 +2,60 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
 
 public class CarDoor {
 
-    private boolean IsDoorOpened;
-    private boolean IsWindowOpened;
+    private boolean isDoorOpened;
+    private boolean isWindowOpened;
 
     public CarDoor (boolean isDoorOpened, boolean isWindowOpened) {
-        IsDoorOpened = isDoorOpened;
-        IsWindowOpened = isWindowOpened;
+        this.isDoorOpened = isDoorOpened;
+        this.isWindowOpened = isWindowOpened;
     }
 
     public CarDoor () {
            }
 
     public void openDoor(){
-        IsDoorOpened = true;
+        isDoorOpened = true;
     }
 
     public void closeDoor () {
-        IsDoorOpened = false;
+        isDoorOpened = false ;
     }
 
     public void setDoor () {
-        IsDoorOpened = !IsDoorOpened;
+        if (isDoorOpened == false){
+            isDoorOpened = true;
+        }
+        else {isDoorOpened = false;}
     }
 
     public void openWindow () {
-        IsWindowOpened = true;
+        isWindowOpened = true;
     }
 
     public void closeWindow () {
-        IsWindowOpened = false;
+        isWindowOpened = false;
     }
 
     public void setWindow () {
-        IsWindowOpened = !IsWindowOpened;
+        isWindowOpened = !isWindowOpened;
     }
 
     public boolean getDoor () {
-        return IsDoorOpened;
+        return isDoorOpened;
     }
 
     public boolean getWindow () {
-        return IsWindowOpened;
+        return isWindowOpened;
+    }
+
+    public String rez( boolean abc ){
+        String x = abc ? "closed" : "open";
+        return  x;
+    }
+
+    public void showInfoDoorWindow(){
+        System.out.println("Door of the car is " + rez(getDoor()) + "****" + "Window of the car is "  +  rez(getWindow()));
+
     }
 }
 

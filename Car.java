@@ -3,6 +3,9 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
 import java.time.LocalDate;
 
 public class Car {
+
+    private static final int MAX_DOORS = 4;
+    private static final int MAX_WHEELS = 10;
     private final LocalDate produceDate;
     private String engineType;
     private int maxSpeed;
@@ -13,8 +16,7 @@ public class Car {
     private CarWheel[] carwheels = new CarWheel[MAX_WHEELS];
     private CarDoor[] cardoors = new CarDoor[MAX_DOORS];
     private int wheelCount;
-    private static final int MAX_DOORS = 4;
-    private static final int MAX_WHEELS = 10;
+
 
     public Car () {
         produceDate = LocalDate.now();
@@ -108,7 +110,7 @@ public class Car {
         if ((i >= 0) && (i <= wheelCount-1)){
             return carwheels[i];
         } else {
-            System.out.println("It is't  wheel ");
+            System.out.println("It is't  wheel with index " + i);
             return null;
         }
     }

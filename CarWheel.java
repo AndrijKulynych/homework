@@ -21,7 +21,9 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
         // method  check  value inside of [0,1]
         private boolean checkTire (double tireTag) {
             boolean result = ((tireTag >= TIRE_OLD) && (tireTag <= TIRE_NEW));
-            if (!result) System.out.println(" Wrong number tire wear, diapason is [0,1].");
+            if (!result) {
+                System.out.println(" Wrong number tire wear, diapason is [0,1].");
+            }
             return result;
         }
 
@@ -41,7 +43,7 @@ package com.mateakademia.homework.homework3.task32.lamborghinicar;
             return tireTag;
         }
 
-        public void showInfo(){
+        public void showInfoWheel(){
             System.out.println("(X%)The state of tire is - " + getTireState() );
         }
 
