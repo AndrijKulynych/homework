@@ -2,22 +2,18 @@ package com.mateakademija.homework.homework4.task41;
 
 public class MyArrayList<E> implements SList <E> {
 
-    public static void main (String[] args) {
-      SList<String> str = new MyArrayList<>();
-            str.add("first");
-        str.add("second");
-        str.add("wwwwww");
-        str.add("tt");
-        str.remove(0);
-        System.out.println(str.get(2));
-    }
-
+    private static final int DEFAULT_CAPACITY = 10;
+    private static final Object[] EMPTY_ELEMENTDATA = {};
+    private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+    private int size;
+    protected  int modCount = 0;
+    transient Object[] elementData = EMPTY_ELEMENTDATA;
 
     E[] values;
     private int index = 0;
 
     public MyArrayList () {
-        values = (E[]) new Object[0];
+        values = (E[]) new Object[10];
     }
 
     @Override
@@ -42,6 +38,14 @@ public class MyArrayList<E> implements SList <E> {
         }
     }
 
+    public void clear() {
+        modCount++;
+        for (int i = 0; i < size; i++)
+            elementData[i] = null;
+        size = 0;
+    }
+
+
     @Override
     public void remove (int i) {
         try {
@@ -53,6 +57,8 @@ public class MyArrayList<E> implements SList <E> {
             } catch (ClassCastException ex) {
             ex.printStackTrace();
         }
+
+
 
     }
 
