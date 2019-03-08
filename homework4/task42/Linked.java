@@ -1,9 +1,13 @@
 package com.mateakademija.homework.homework4.task42;
 
-public interface Linked <E> {
-    void addFirst (E e);
+public interface Linked <T> {
+    T get (int index);
 
-    E getElementByIndex (int counter);
+    void add (int i, T t);
+    void add (T t);
 
-    int size ();
+    T remove (int index);
+
+    void clear ();
+    int size();
 }

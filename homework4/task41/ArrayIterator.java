@@ -1,4 +1,4 @@
-package com.mateakademija.homework.homework4.task41;
+package com.task41;
 
 import java.util.Iterator;
 
