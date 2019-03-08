@@ -1,6 +1,6 @@
 package com.mateakademija.homework.homework4.task41;
 
-public class Main {
+public class TestArray {
 
     public static void main(String[] args) {
         MyArrayList<String> srt = new MyArrayList <>();
