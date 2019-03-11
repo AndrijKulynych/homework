@@ -1,4 +1,4 @@
-package com.homework5.firstvariant;
+package com.homework5.tasknew;
 
 import java.util.Scanner;
 
