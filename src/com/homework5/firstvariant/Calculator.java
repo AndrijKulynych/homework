@@ -8,26 +8,26 @@ public class Calculator {
     private static Scanner cont;
 
 
-    public static Function3Arity f1 = (a, b, op) -> {
-        return "" + a + op + b + " = " + (a + b);
+    public static Function f1 = (a, b, op) -> {
+        return  (a + b);
     };
-    public static Function3Arity f2 = (a, b, op) -> {
-        return "" + a + op + b + " = " + (a - b);
+    public static Function f2 = (a, b, op) -> {
+        return (a - b);
     };
-    public static Function3Arity f3 = (a, b, op) -> {
-        return "" + a + op + b + " = " + (a * b);
+    public static Function f3 = (a, b, op) -> {
+        return (a * b);
     };
-    public static Function3Arity f4 = (a, b, op) -> {
-        return "" + a + op + b + " = " + (a / b);
+    public static Function f4 = (a, b, op) -> {
+        return (a / b);
     };
-    public static Function3Arity f5 = (a, b, op) -> {
-        return "" + a + op + b + " = " + Math.pow(a, b);
+    public static Function f5 = (a, b, op) -> {
+        return  Math.pow(a, b);
     };
-    public static Function3Arity f6 = (a, b, op) -> {
-        return "" + a + op + b + " = " + Math.pow(a, (1 / b));
+    public static Function f6 = (a, b, op) -> {
+        return  Math.pow(a, (1 / b));
     };
-    public static Function3Arity f7 = (a, b, op) -> {
-        return "" + a + op + b + " = " + Math.pow((a + b) / (a + 117), a);
+    public static Function f7 = (a, b, op) -> {
+        return  Math.pow((a + b) / (a + 117), a);
     };
     public static Print rez = (o) -> {
         if (o.equals("Y") == true) {
@@ -56,19 +56,19 @@ public class Calculator {
             operation = op.next();
 
 
-            System.out.print(operation.equals("+") == true ? "Your result is: " + f1.apply(num1, num2, "+") : "");
+            System.out.print(operation.equals("+") == true ? "Your result <+> operation is: " + f1.calculate(num1, num2, "+") : "");
 
-            System.out.print(operation.equals("-") == true ? "Your result is: " + f2.apply(num1, num2, "-") : "");
+            System.out.print(operation.equals("-") == true ? "Your result <-> operation is: " + f2.calculate(num1, num2, "-") : "");
 
-            System.out.print(operation.equals("*") == true ? "Your result is: " + f3.apply(num1, num2, "*") : "");
+            System.out.print(operation.equals("*") == true ? "Your result <*> operation is: " + f3.calculate(num1, num2, "*") : "");
 
-            System.out.print(operation.equals("/") == true ? "Your result is: " + f4.apply(num1, num2, "/") : "");
+            System.out.print(operation.equals("/") == true ? "Your result </> operation is: " + f4.calculate(num1, num2, "/") : "");
 
-            System.out.print(operation.equals("^") == true ? "Your result is: " + f5.apply(num1, num2, "^") : "");
+            System.out.print(operation.equals("^") == true ? "Your result <^> operation is: " + f5.calculate(num1, num2, "^") : "");
 
-            System.out.print(operation.equals("root") == true ? "Your result is: " + f6.apply(num1, num2, "root") : "");
+            System.out.print(operation.equals("root") == true ? "Your result <root> operation is: " + f6.calculate(num1, num2, "root") : "");
 
-            System.out.print(operation.equals("^r") == true ? "Your result is: " + f7.apply(num1, num2, "^r") : "");
+            System.out.print(operation.equals("^r") == true ? "Your result <^r> operation is : " + f7.calculate(num1, num2, "^r") : "");
 
 
             System.out.println("\n" + " Do you wish to perform any other operation?");
