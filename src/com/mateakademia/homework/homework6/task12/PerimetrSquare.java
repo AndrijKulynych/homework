@@ -1,4 +1,4 @@
-package com.mateakademija.homework6.task12;
+package com.mateakademia.homework6.task12;
 
 public class PerimetrSquare {
 
@@ -8,7 +8,6 @@ public class PerimetrSquare {
 
         try {
             squre.setSide(n);
-
         } catch (PerimetrException e) {
             throw new RuntimeException(e);
         }

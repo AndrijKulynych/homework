@@ -1,4 +1,4 @@
-package com.mateakademija.homework6.task12;
+package com.mateakademia.homework6.task12;
 
 public class Square {
     private double side;
