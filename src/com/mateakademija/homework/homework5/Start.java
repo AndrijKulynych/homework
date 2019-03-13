@@ -1,4 +1,4 @@
-package com.jv_program.lesson1;
+package com.mateakademija.homework.homework5;
 import java.util.Scanner;
 
 public class Start {
@@ -18,7 +18,6 @@ public class Start {
 
             System.out.println("Select your operation:");
              op = input.next().charAt(0);
-
 
                 Double rez = new Calculate().operations.get(op).apply(n1, n2);
                 System.out.println(rez);

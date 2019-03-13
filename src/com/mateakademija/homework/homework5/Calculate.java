@@ -1,4 +1,4 @@
-package com.jv_program.lesson1;
+package com.mateakademija.homework.homework5;
 
 import java.util.HashMap;
 import java.util.function.BinaryOperator;
@@ -6,7 +6,7 @@ import java.util.function.BinaryOperator;
 
 public class Calculate {
 
-    static  HashMap <Character, BinaryOperator <Double>> operations = new HashMap <>();
+    HashMap <Character, BinaryOperator <Double>> operations = new HashMap <>();
 
     {
         {
