@@ -1,9 +1,9 @@
 package com.mateakademia.homework6;
 
-public abstract class Flowers {
+public abstract class Flower {
     private int price;
 
-    public Flowers(int price) {
+    public Flower (int price) {
         this.price = price;
     }
 

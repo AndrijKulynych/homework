@@ -1,8 +1,9 @@
 package com.mateakademia.homework6;
-public class Chamomile extends Flowers {
+public class Chamomile extends Flower {
+       private static int CHAMBORLIN_PRICE = 70;
 
     public Chamomile(){
-        super(70);
+        super(CHAMBORLIN_PRICE);
     }
 
     @Override

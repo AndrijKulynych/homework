@@ -1,9 +1,11 @@
 package com.mateakademia.homework6;
 
-public class Rose extends Flowers {
+public class Rose extends Flower {
+
+    private static final int ROSE_PRICE = 100;
 
     public Rose(){
-        super(100);
+        super(ROSE_PRICE);
     }
 
     @Override

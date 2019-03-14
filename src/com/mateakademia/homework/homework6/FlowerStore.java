@@ -5,12 +5,12 @@ public class FlowerStore {
 
     private int walletOfShop;
 
-   public Flowers[] sellSequence(int rose, int chamomile, int tulip ) {
+   public Flower[] sellSequence(int rose, int chamomile, int tulip ) {
 
-        int QuantityFlowers = rose + chamomile + tulip;
-        Flowers[] buket = new Flowers[QuantityFlowers];
+        int quantityFlowers = rose + chamomile + tulip;
+        Flower[] buket = new Flower[quantityFlowers];
         int k = 0;
-        while (k < QuantityFlowers) {
+        while (k < quantityFlowers) {
             if (rose > 0) {
                 buket[k] = new Rose();
                 rose--;
@@ -29,18 +29,18 @@ public class FlowerStore {
             }
 
         }
-        totalBalance(buket);
+        getBalance(buket);
         return buket;
     }
 
-    private void totalBalance(Flowers[] buket) {
+    public void getBalance(Flower[] buket) {
         for (int i = 0; i < buket.length; i++) {
             walletOfShop += buket[i].getPrice();
         }
     }
-        public Flowers[] sell(int rose, int tulip, int chamomile) {
+        public Flower[] sell(int rose, int tulip, int chamomile) {
             int QuantityFlowers = rose + tulip + chamomile;
-            Flowers[] buket = new Flowers[QuantityFlowers];
+            Flower[] buket = new Flower[QuantityFlowers];
             for (int i = 0; i < rose; i++) {
                 buket[i] = new Rose();
             }
@@ -50,7 +50,7 @@ public class FlowerStore {
             for (int i = rose + tulip; i < QuantityFlowers; i++) {
                 buket[i] = new Chamomile();
             }
-            totalBalance(buket);
+            getBalance(buket);
             return buket;
         }
 

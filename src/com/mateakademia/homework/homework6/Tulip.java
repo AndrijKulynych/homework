@@ -1,10 +1,12 @@
 package com.mateakademia.homework6;
 
 
-public class Tulip extends Flowers {
+public class Tulip extends Flower {
+
+    private static final int TULIP_PRICE = 45;
 
     public Tulip(){
-        super(45);
+        super(TULIP_PRICE);
     }
 
     @Override
