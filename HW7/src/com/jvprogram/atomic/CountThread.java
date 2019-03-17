@@ -1,5 +1,5 @@
 
-package com.jv_program.atomic;
+package com.jvprogram.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -16,4 +16,3 @@ public class CountThread extends Thread {
         System.out.println(" << " + super.getName() + " = " + count.getAndIncrement() + " >>");
     }
 }
-

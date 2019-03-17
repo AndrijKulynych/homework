@@ -1,7 +1,6 @@
-package com.jv_program.singeltonreflecs;
+package com.jvprogram.singeltonreflecs;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 
 public class Application {
 
@@ -13,15 +12,12 @@ public class Application {
                 System.out.println("INSTANCE 1:  " + inst1.hashCode());
             }
         }).start();
-
         new Thread(new Runnable() {
-
             public void run () {
                 AppSingleTon inst2 = AppSingleTon.getInstance();
                 System.out.println("INSTANCE 2 :  " + inst2.hashCode());
             }
         }).start();
-
         AppSingleTon inst3 = AppSingleTon.getInstance();
         AppSingleTon inst4 = null;
         try {
@@ -36,21 +32,3 @@ public class Application {
         System.out.println("INSTANCE 4 :  " + inst4.hashCode());
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

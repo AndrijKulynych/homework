@@ -1,4 +1,4 @@
-package com.jv_program.atomic;
+package com.jvprogram.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -11,4 +11,3 @@ public class AtomicApp {
         new Thread(new CountThread(count, "3d thread")).start();
     }
 }
-

@@ -1,4 +1,4 @@
-package com.jv_program.sinhronizer.barjer;
+package com.jvprogram.sinhronizer.barjer;
 
 public class RobotBarrier extends Thread {
     @Override
