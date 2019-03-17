@@ -3,46 +3,47 @@ package com.jvprogram.concurrent.collections;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
-
 public class ConcurrentHashMapApp {
-    private final ConcurrentHashMap <Integer, String> hash = new ConcurrentHashMap <>();
+    private static  String NUMBER_1 = "FIRST";
+    private static  String NUMBER_2 = "SECOND";
+    private static  String NUMBER_3 = "THIRD";
+    private  static final ConcurrentHashMap <Integer, String> hash = new ConcurrentHashMap <>();
 
     public static void main (String[] args) {
-        ConcurrentHashMapApp ob = new ConcurrentHashMapApp();
-        new Thread(ob.new FirstThread()).start();
-        new Thread(ob.new SecondThread()).start();
-        new Thread(ob.new ThirdThread()).start();
-        new Thread(ob.new ForthThread()).start();
+        new Thread(new FirstThread()).start();
+        new Thread(new SecondThread()).start();
+        new Thread(new ThirdThread()).start();
+        new Thread(new ForthThread()).start();
     }
 
-    class FirstThread implements Runnable {
+  private static class FirstThread implements Runnable {
         @Override
         public void run () {
             for (int i = 1; i <= 10; i++) {
-                hash.put(i, "FIRST");
+                hash.put(i, NUMBER_1);
             }
         }
     }
 
-    class SecondThread implements Runnable {
+    private static class SecondThread implements Runnable {
         @Override
         public void run () {
             for (int i = 1; i <= 10; i++) {
-                hash.put(i, "SECOND");
+                hash.put(i, NUMBER_2);
             }
         }
     }
 
-    class ThirdThread implements Runnable {
+    private static class ThirdThread implements Runnable {
         @Override
         public void run () {
             for (int i = 1; i <= 10; i++) {
-                hash.put(i, "Third");
+                hash.put(i, NUMBER_3);
             }
         }
     }
 
-    class ForthThread implements Runnable {
+    private static class ForthThread implements Runnable {
         @Override
         public void run () {
             Iterator <Integer> ite = hash.keySet().iterator();

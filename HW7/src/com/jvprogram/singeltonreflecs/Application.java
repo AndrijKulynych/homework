@@ -8,21 +8,21 @@ public class Application {
         new Thread(new Runnable() {
             @Override
             public void run () {
-                AppSingleTon inst1 = AppSingleTon.getInstance();
+                Singleton inst1 = Singleton.getInstance();
                 System.out.println("INSTANCE 1:  " + inst1.hashCode());
             }
         }).start();
         new Thread(new Runnable() {
             public void run () {
-                AppSingleTon inst2 = AppSingleTon.getInstance();
+                Singleton inst2 = Singleton.getInstance();
                 System.out.println("INSTANCE 2 :  " + inst2.hashCode());
             }
         }).start();
-        AppSingleTon inst3 = AppSingleTon.getInstance();
-        AppSingleTon inst4 = null;
+        Singleton inst3 = Singleton.getInstance();
+        Singleton inst4 = null;
         try {
-            Class <? extends AppSingleTon> clazz = AppSingleTon.class;
-            Constructor <AppSingleTon> bilder = (Constructor <AppSingleTon>) clazz.getDeclaredConstructor();
+            Class <? extends Singleton> clazz = Singleton.class;
+            Constructor <Singleton> bilder = (Constructor <Singleton>) clazz.getDeclaredConstructor();
             bilder.setAccessible(true);
             inst4 = bilder.newInstance();
         } catch (Exception e) {

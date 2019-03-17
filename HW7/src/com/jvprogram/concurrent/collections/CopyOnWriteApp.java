@@ -6,6 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CopyOnWriteApp {
     private static List <String> list = new CopyOnWriteArrayList <>();
+
     public static void main (String[] args) {
         list.add("AAAAAA");
         list.add("BBBBBB");
