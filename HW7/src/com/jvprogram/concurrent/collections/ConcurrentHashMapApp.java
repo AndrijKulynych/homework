@@ -4,10 +4,10 @@ import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ConcurrentHashMapApp {
-    private static  String NUMBER_1 = "FIRST";
-    private static  String NUMBER_2 = "SECOND";
-    private static  String NUMBER_3 = "THIRD";
-    private  static final ConcurrentHashMap <Integer, String> hash = new ConcurrentHashMap <>();
+    private static final  String NUMBER_1 = "FIRST";
+    private static final  String NUMBER_2 = "SECOND";
+    private static final  String NUMBER_3 = "THIRD";
+    private static final ConcurrentHashMap <Integer, String> hash = new ConcurrentHashMap <>();
 
     public static void main (String[] args) {
         new Thread(new FirstThread()).start();
