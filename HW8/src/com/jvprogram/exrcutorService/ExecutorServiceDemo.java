@@ -8,19 +8,19 @@ import java.util.concurrent.Executors;
 
 public class ExecutorServiceDemo {
 
-    SimpleDateFormat sdf = null;
-    private final int COUNT = 5;
+    private static SimpleDateFormat sdf = null;
+    private final static int COUNT = 5;
 
-    ExecutorServiceDemo () {
+    //-------------------------------------------------
+    public static void main (String args[]) {
+
         sdf = new SimpleDateFormat("HH:mm:ss.S");
 
         CountDownLatch cdl1 = new CountDownLatch(COUNT);
         CountDownLatch cdl2 = new CountDownLatch(COUNT);
         CountDownLatch cdl3 = new CountDownLatch(COUNT);
         CountDownLatch cdl4 = new CountDownLatch(COUNT);
-
-        ExecutorService executor;
-        executor = Executors.newFixedThreadPool(2);
+        ExecutorService  executor = Executors.newFixedThreadPool(2);
 
         System.out.println("Running threads");
         executor.execute(new MyThread(cdl1, "Thread.1"));
@@ -39,17 +39,16 @@ public class ExecutorServiceDemo {
         executor.shutdown();
         System.out.println("Thread termination");
     }
-
     //-------------------------------------------------
-    void printMessage (final String templ) {
+    static void printMessage (final String templ) {
         String text = sdf.format(new Date()) + " : " + templ;
         System.out.println(text);
     }
 
     //-------------------------------------------------
-    class MyThread implements Runnable {
-        String name;
-        CountDownLatch latch;
+    static class MyThread implements Runnable {
+        private String name;
+        private CountDownLatch latch;
 
         MyThread (CountDownLatch c, String n) {
             latch = c;
@@ -68,10 +67,5 @@ public class ExecutorServiceDemo {
             } catch (InterruptedException e) {
             }
         }
-    }
-
-    //-------------------------------------------------
-    public static void main (String args[]) {
-        new ExecutorServiceDemo();
     }
 }

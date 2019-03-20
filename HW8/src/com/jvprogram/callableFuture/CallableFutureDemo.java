@@ -10,23 +10,20 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class CallableFutureDemo {
 
-    public static void main(String[] args){
+    public static void main (String[] args) {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
-        List<Future<Integer>> resultList = new ArrayList<>();
+        List <Future <Integer>> resultList = new ArrayList <>();
         Random random = new Random();
-        for (int i=0; i<4; i++){
+        for (int i = 0; i < 4; i++) {
             Integer number = random.nextInt(10);
-            FactorialCalculator calculator  = new FactorialCalculator(number);
-            Future<Integer> result = executor.submit(calculator);
+            FactorialCalculator calculator = new FactorialCalculator(number);
+            Future <Integer> result = executor.submit(calculator);
             resultList.add(result);
         }
-        for(Future<Integer> future : resultList){
-            try
-            {
+        for (Future <Integer> future : resultList) {
+            try {
                 System.out.println("Future result is - " + " - " + future.get() + "   and task done is " + future.isDone());
-            }
-            catch (InterruptedException | ExecutionException e)
-            {
+            } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
         }
