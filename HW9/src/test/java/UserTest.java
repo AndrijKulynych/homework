@@ -1,5 +1,5 @@
 import static org.junit.Assert.*;
-
+import static Sex.*;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.ArrayList;
@@ -15,9 +15,9 @@ public class UserTest {
 
     @Before
     public void setUp () {
-        user1 = new User("Stepan", 21, Sex.MALE);
-        user2 = new User("Lera", 19, Sex.FEMALE);
-        user3 = new User("Alina", 12, Sex.FEMALE);
+        user1 = new User("Stepan", 21, MALE);
+        user2 = new User("Lera", 19, FEMALE);
+        user3 = new User("Alina", 12, FEMALE);
         userNotAdd = new User("", 0, null);
         userNotAdd1 = new User(null, 0, null);
     }
@@ -33,22 +33,22 @@ public class UserTest {
     }
 
     @Test
-    public void getAllUsersNoNULL () {
+    public void getAllUsersNotNull () {
         List <User> expected = User.getAllUsers();
         assertNotNull(expected);
     }
 
     @Test
-    public void getAllUsersMALE () {
-        List <User> expected = User.getAllUsers(Sex.MALE);
+    public void getAllUsersMale () {
+        List <User> expected = User.getAllUsers(MALE);
         List <User> actual = new ArrayList <>();
         actual.add(user1);
         assertEquals(expected, actual);
     }
 
     @Test
-    public void getAllUsersMALEnoNULL () {
-        List <User> expected = User.getAllUsers(Sex.MALE);
+    public void getAllUsersMaleNotNull  () {
+        List <User> expected = User.getAllUsers(MALE);
         assertNotNull(expected);
     }
 
@@ -59,8 +59,8 @@ public class UserTest {
     }
 
     @Test
-    public void getAllUsersFEMALE () {
-        List <User> expected = User.getAllUsers(Sex.FEMALE);
+    public void getAllUsersFemale() {
+        List <User> expected = User.getAllUsers(FEMALE);
         List <User> actual = new ArrayList <>();
         actual.add(user2);
         actual.add(user3);
@@ -68,8 +68,8 @@ public class UserTest {
     }
 
     @Test
-    public void getAllUsersFEMALEnoNULL () {
-        List <User> expected = User.getAllUsers(Sex.FEMALE);
+    public void getAllUsersFemaleNotNull () {
+        List <User> expected = User.getAllUsers(FEMALE);
         assertNotNull(expected);
     }
 
@@ -81,15 +81,15 @@ public class UserTest {
     }
 
     @Test
-    public void getHowManyUsersMALE () {
-        int expected = User.getHowManyUsers(Sex.MALE);
+    public void getHowManyUsersMale () {
+        int expected = User.getHowManyUsers(MALE);
         int actual = 1;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void getHowManyUsersFEMALE () {
-        int expected = User.getHowManyUsers(Sex.FEMALE);
+    public void getHowManyUsersFemale () {
+        int expected = User.getHowManyUsers(FEMALE);
         int actual = 2;
         assertEquals(expected, actual);
     }
@@ -102,21 +102,21 @@ public class UserTest {
     }
 
     @Test
-    public void getAllAgeUsersMALE () {
-        int expected = User.getAllAgeUsers(Sex.MALE);
+    public void getAllAgeUsersMale () {
+        int expected = User.getAllAgeUsers(MALE);
         int actual = 21;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void getAllAgeUsersFEMALE () {
-        int expected = User.getAllAgeUsers(Sex.FEMALE);
+    public void getAllAgeUsersFemale() {
+        int expected = User.getAllAgeUsers(FEMALE);
         int actual = 31;
         assertEquals(expected, actual);
     }
 
     @Test
-    public void newUserEMPTYname () {
+    public void newUserEmptyName () {
         for (User user : User.getAllUsers()) {
             if (user.getName() != null && user.getName().isEmpty()) {
                 fail("You try to create user with empty name !");
