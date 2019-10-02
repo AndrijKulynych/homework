@@ -1,3 +1,6 @@
 *.txt
 *.iml
 out
+.idea
+target
+HW9/target
